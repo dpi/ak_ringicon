@@ -32,16 +32,13 @@ class Ringicon extends RingiconBase {
    * {@inheritdoc}
    */
   public function getAvatar(AvatarIdentifierInterface $identifier): ?string {
-    $width = $this->getConfiguration()->getWidth();
-
     $ringicon = new RingiconLib($width, 3);
 
     $identifier = $identifier->getHashed();
-    $file_path = tmpfile();
+    $file_path = tempnam(sys_get_temp_dir(), 'ringicon');
     $ringicon->createImage($identifier, $file_path);
 
-    $metadata = stream_get_meta_data($file_path);
-    return $metadata['uri'] ?? NULL;
+    return $file_path;
   }
 
 }
