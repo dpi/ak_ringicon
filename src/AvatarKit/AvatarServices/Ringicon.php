@@ -32,6 +32,13 @@ class Ringicon extends RingiconBase {
    * {@inheritdoc}
    */
   public function getAvatar(AvatarIdentifierInterface $identifier): ?string {
+    $width = $this->getConfiguration()->getWidth();
+    if (!$width) {
+      // Width must be set otherwise imagecreatetruecolor() will throw a
+      // useless exception message.
+      throw new \Exception('Dimensions are required.');
+    }
+
     $ringicon = new RingiconLib($width, 3);
 
     $identifier = $identifier->getHashed();
