@@ -29,7 +29,6 @@
   "require": {
     "php": "~7.1",
     "dpi/ak": "^1@dev",
-    "jakeasmith/http_build_url": "^1.0",
     "splitbrain/php-ringicon": "^1.0"
   },
   "extra": {
