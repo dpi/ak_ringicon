@@ -1,0 +1,40 @@
+{
+  "name": "dpi/ak_ringicon",
+  "description": "Ringicon for Avatar Kit",
+  "minimum-stability": "stable",
+  "license": "Apache-2.0",
+  "support": {
+    "issues": "https://github.com/dpi/ak_ringicon"
+  },
+  "authors": [
+    {
+      "name": "Daniel Phin",
+      "email": "pro@danielph.in",
+      "homepage": "https://dpi.id.au"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "dpi\\ak_ringicon\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "require-dev": {
+    "drupal/coder": "^8.2.12",
+    "phpunit/phpunit": "5",
+    "squizlabs/php_codesniffer": "^2.7"
+  },
+  "require": {
+    "php": "~7.1",
+    "dpi/ak": "^1@dev",
+    "jakeasmith/http_build_url": "^1.0",
+    "splitbrain/php-ringicon": "^1.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
