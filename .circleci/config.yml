@@ -18,6 +18,10 @@ jobs:
           - v1-dependencies-{{ checksum "composer.json" }}
           - v1-dependencies-
 
+      # Install GD
+      - run: sudo apt-get install -y libpng-dev
+      - run: sudo docker-php-ext-install gd
+
       - run: composer install -n --prefer-dist
 
       - save_cache:
